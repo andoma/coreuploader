@@ -1,6 +1,6 @@
 
 coreuploader: coreuploader.c ta.h BearSSL/build/libbearssl.a
-	gcc -IBearSSL/inc -Wall -O2 -o $@ $< BearSSL/build/libbearssl.a
+	${CC} -IBearSSL/inc -Wall -O2 -o $@ $< BearSSL/build/libbearssl.a
 
 ta.h: cacert.pem BearSSL/build/libbearssl.a
 	BearSSL/build/brssl ta $< >$@
